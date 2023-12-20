@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/plivo-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            plivo: '%env(PLIVO_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "PLIVO_DSN=plivo://AUTH_ID:AUTH_TOKEN@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "4e66517b2ab3e5d692f74f6e342efff119003641"
+        }
+    }
+}

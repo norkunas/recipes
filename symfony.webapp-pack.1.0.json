@@ -1,12 +1,9 @@
 {
     "manifests": {
-        "symfony/webapp-meta": {
+        "symfony/webapp-pack": {
             "manifest": {
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
-                },
-                "env": {
-                    "MESSENGER_TRANSPORT_DSN": "doctrine://default?auto_setup=0"
                 }
             },
             "files": {
@@ -41,7 +38,7 @@
                     "executable": false
                 }
             },
-            "ref": "67cae591d131c133d63b893c5324796b88c59b34"
+            "ref": "aece95c8a188f6e6d04f01ccb8678d1764fd2642"
         }
     }
 }

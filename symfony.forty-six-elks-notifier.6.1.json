@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/forty-six-elks-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            forty-six-elks: '%env(FORTY_SIX_ELKS_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "FORTY_SIX_ELKS_DSN=forty-six-elks://API_USERNAME:API_PASSWORD@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "64dbaeb31fe5812c411d0301a5a707f81aeaa6a9"
+        }
+    }
+}

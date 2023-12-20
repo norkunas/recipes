@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/termii-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            termii: '%env(TERMII_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "TERMII_DSN=termii://API_KEY@default?from=FROM&channel=CHANNEL"
+                }
+            },
+            "files": [],
+            "ref": "87763e9b40fe694c23c0f60d00fa987bfecf75a2"
+        }
+    }
+}

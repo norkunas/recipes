@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/gateway-api-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            gatewayapi: '%env(GATEWAYAPI_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "GATEWAYAPI_DSN=gatewayapi://TOKEN@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "4e79d806089a216019f093cdded4eebc282cb46c"
+        }
+    }
+}

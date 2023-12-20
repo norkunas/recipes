@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/turbo-sms-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            turbosms: '%env(TURBOSMS_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "TURBOSMS_DSN=turbosms://AUTH_TOKEN@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "5db4040988af4d791e311389074908bfe7719247"
+        }
+    }
+}

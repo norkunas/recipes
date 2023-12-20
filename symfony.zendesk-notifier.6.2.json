@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/zendesk-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        chatter_transports:",
+                        "content": "            zendesk: '%env(ZENDESK_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "ZENDESK_DSN=zendesk://EMAIL:TOKEN@SUBDOMAIN"
+                }
+            },
+            "files": [],
+            "ref": "715bde9c240f84a782e4be39c8149fe0da69b3c5"
+        }
+    }
+}

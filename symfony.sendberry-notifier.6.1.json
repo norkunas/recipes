@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/sendberry-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            sendberry: '%env(SENDBERRY_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "SENDBERRY_DSN=sendberry://USERNAME:PASSWORD@default?auth_key=AUTH_KEY&from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "233ce1fbba942823422aa99b3a59034634342494"
+        }
+    }
+}

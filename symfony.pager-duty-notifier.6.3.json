@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/pager-duty-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            pagerduty: '%env(PAGERDUTY_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "PAGERDUTY_DSN=pagerduty://TOKEN@SUBDOMAIN"
+                }
+            },
+            "files": [],
+            "ref": "0206bf3f4091e7a3a6e87e0fcdd0293198fa33ee"
+        }
+    }
+}

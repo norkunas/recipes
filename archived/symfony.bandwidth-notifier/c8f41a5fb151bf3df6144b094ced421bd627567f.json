@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/bandwidth-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            bandwidth: '%env(BANDWIDTH_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "BANDWIDTH_DSN=bandwidth://USERNAME:PASSWORD@default?from=FROM&account_id=ACCOUNT_ID&application_id=APPLICATION_ID&priority=PRIORITY"
+                }
+            },
+            "files": [],
+            "ref": "c8f41a5fb151bf3df6144b094ced421bd627567f"
+        }
+    }
+}

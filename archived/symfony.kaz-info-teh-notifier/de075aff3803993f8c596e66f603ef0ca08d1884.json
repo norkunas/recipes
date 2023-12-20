@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/kaz-info-teh-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            kaz-info-teh: '%env(KAZ_INFO_TEH_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "KAZ_INFO_TEH_DSN=kaz-info-teh://USERNAME:PASSWORD@default?sender=FROM"
+                }
+            },
+            "files": [],
+            "ref": "de075aff3803993f8c596e66f603ef0ca08d1884"
+        }
+    }
+}
